@@ -8,6 +8,7 @@ const autoprefixer = require('autoprefixer');
 const postcssPresets = require('postcss-preset-env');
 
 const finalCSSLoader = (env === 'production') ? MiniCssExtractPlugin.loader : { loader: 'style-loader' };
+const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 
 module.exports = {
   mode: env,
@@ -56,17 +57,21 @@ module.exports = {
           },
         ],
       },
+      // {
+      //   test: /\.(jpe?g|png|gif|svg)$/,
+      //   use: [
+      //     {
+      //       loader: 'file-loader',
+      //       options: {
+      //         useRelativePath: true,
+      //         name: '[name].[ext]',
+      //       },
+      //     },
+      //   ],
+      // },
       {
-        test: /\.(jpe?g|png|gif|svg)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              useRelativePath: true,
-              name: '[name].[ext]',
-            },
-          },
-        ],
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        type: 'asset',
       },
     ],
   },
@@ -78,6 +83,25 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.html',
       filename: './index.html',
+    }),
+    new ImageMinimizerPlugin({
+      minimizerOptions: {
+        plugins: [
+          ['gifsicle', { interlaced: true }],
+          ['imagemin-mozjpeg', { quality: 5, progressive: true }],
+          ['optipng', { optimizationLevel: 5 }],
+          [
+            'svgo',
+            {
+              plugins: [
+                {
+                  removeViewBox: false,
+                },
+              ],
+            },
+          ],
+        ],
+      },
     }),
   ],
 };

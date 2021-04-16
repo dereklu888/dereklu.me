@@ -13,6 +13,11 @@ There were some difficulties in getting certain commands to work, as I was on Wi
 quite quickly.
 
 ## Extra Credit
+I added in an image compressor/minimizer [ImageMinimizerWebpackPlugin](https://webpack.js.org/plugins/image-minimizer-webpack-plugin/),
+which replaces the file loader we implemented in class. Here, I turned the compression on JPGs to be very lossy just to ensure
+the loader was working properly. I've commented out the default file loader in [webpack.config.js](webpack.config.js).
+
+<img src="src/img/lossycat.png">
 
 ## Screenshots
 <img src="src/img/page1.png">
