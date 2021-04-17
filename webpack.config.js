@@ -88,7 +88,7 @@ module.exports = {
       minimizerOptions: {
         plugins: [
           ['gifsicle', { interlaced: true }],
-          ['jpegtran', { progressive: true }],
+          ['imagemin-mozjpeg', { quality: 5, progressive: true }],
           ['optipng', { optimizationLevel: 5 }],
           [
             'svgo',
