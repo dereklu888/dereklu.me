@@ -37,15 +37,13 @@ const FallBack = (props) => {
 const App = (props) => {
   return (
     <Router>
-      <div>
-        <Switch>
-          <Nav />
-          <Route exact path="/" component={Welcome} />
-          <Route path="/about" component={About} />
-          <Route exact path="/test/:id" component={Test} />
-          <Route component={FallBack} />
-        </Switch>
-      </div>
+      <Nav />
+      <Switch>
+        <Route exact path="/" component={Welcome} />
+        <Route path="/about" component={About} />
+        <Route exact path="/test/:id" component={Test} />
+        <Route component={FallBack} />
+      </Switch>
     </Router>
   );
 };
