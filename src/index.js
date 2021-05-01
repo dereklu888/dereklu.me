@@ -1,51 +1,77 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './style.scss';
-import {
-  BrowserRouter as Router, Route, NavLink, Switch,
-} from 'react-router-dom';
+import debounce from 'lodash.debounce';
+import Home from './components/home';
 
-const About = (props) => {
-  return <div> All there is to know about me </div>;
-};
-const Welcome = (props) => {
-  return <div>Welcome</div>;
-};
-
-const Nav = (props) => {
-  return (
-    <nav>
-      <ul>
-        <li><NavLink to="/" exact>Home</NavLink></li>
-        <li><NavLink to="/about">About</NavLink></li>
-        <li><NavLink to="/test/id1">test id1</NavLink></li>
-        <li><NavLink to="/test/id2">test id2</NavLink></li>
-
-      </ul>
-    </nav>
-  );
-};
-
-const Test = (props) => {
-  return <div> ID: {props.match.params.id} </div>;
-};
-
-const FallBack = (props) => {
-  return <div>URL Not Found</div>;
-};
+const RaindropFX = require('raindrop-fx');
 
 const App = (props) => {
   return (
-    <Router>
-      <Nav />
-      <Switch>
-        <Route exact path="/" component={Welcome} />
-        <Route path="/about" component={About} />
-        <Route exact path="/test/:id" component={Test} />
-        <Route component={FallBack} />
-      </Switch>
-    </Router>
+    <div className="content-wrapper">
+      <nav>
+        <div className="row menu">
+          <ul className="navbar-element">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="//dereklu.me">Resume</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <Home />
+
+      <div id="about" className="section">
+        <div className="row about-wrapper">
+          <div className="column">
+            <h2>About me</h2>
+            <ul>
+              <li>I&apos;m Derek, an avid coder and </li>
+              <li>I love rainy days, away from the heat of</li>
+              <li>Avid D&amp;D player and Critter</li>
+            </ul>
+          </div>
+
+          <img src="src/img/derek.jpg" alt="Derek Lu at Dartmouth" />
+
+        </div>
+      </div>
+
+    </div>
   );
 };
 
 ReactDOM.render(<App />, document.getElementById('main'));
+
+const canvas = document.querySelector('#canvas');
+let rect = canvas.getBoundingClientRect();
+canvas.width = rect.width;
+canvas.height = rect.height;
+
+const raindropFx = new RaindropFX({
+  canvas,
+  background: 'src/img/bg1min.jpg',
+  spawnLimit: 750,
+  spawnInterval: [0.3, 0.8],
+});
+
+const resizeRender = () => {
+  rect = canvas.getBoundingClientRect();
+  raindropFx.resize(rect.width, rect.height);
+};
+
+const dresize = debounce(resizeRender, 100);
+
+// used just for performance improvement on window resizing
+window.onresize = () => {
+  dresize();
+};
+
+window.onload = () => {
+  setInterval(() => {
+    document.getElementById('home').style.background = 'none';
+  }, 2000);
+};
+
+raindropFx.start();

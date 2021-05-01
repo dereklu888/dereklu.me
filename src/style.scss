@@ -1,17 +1,168 @@
-body, html {
+html {
   font-family: "Roboto", sans-serif;
-  background: linear-gradient(to bottom, #87e0fd 0%,#53cbf1 40%,#05abe0 100%);
-  height: 100%;
+  scroll-behavior: smooth;
 }
 
-.logo {
-    background-image: url('img/cat.jpg');
-    width: 300px;
-    height: 300px;
-    background-repeat: no-repeat;
-    background-size: contain;
+body {
+  height: 100%;
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
 }
 
 .active {
   color: pink;
+}
+
+.visible {
+  opacity: 1;
+  transition: all 0.3s linear;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.section, .section-text {
+  height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  padding: 0;
+}
+
+h1 {
+  font-size: 5em;
+  margin: 0;
+}
+
+h2 {
+  font-size: 2em;
+  margin: 0;
+}
+
+h3 {
+  font-size: 1.4em;
+  margin: 5px;
+}
+
+h4 {
+  margin-bottom: 10px;
+}
+
+.row {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+}
+
+.column {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  max-width: 400px;
+  max-height: 800px;
+}
+
+.icons {
+  font-size: 2.5em;
+  & > * {
+    padding: 5px;
+    padding-top: 0;
+  }
+}
+
+#home {
+  // background-image: url(img/bg1.jpg);
+  // background-position: center;
+  // background-attachment: fixed;
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  background-color: white;
+  transition: all 0.5s linear;
+  p {
+    font-size: 1.1em;
+    margin: 0;
+    padding-bottom: 10px;
+    text-align: center;
+    transition: all 0.5s linear;
+  }
+  
+}
+
+#about {
+  // background-color: rgb(26, 31, 33);
+  // background-color: rgb(54, 53, 65);
+  h2 {
+    width: 100%;
+    border-bottom: solid;
+    border-color: rgb(18, 49, 43);
+  }
+
+  .about-wrapper {
+    width: 60vw;
+    justify-content: space-between;
+
+    .column {
+      justify-content: flex-start;
+      align-items: flex-start;
+      ul {
+        padding-left: 20px;
+        li {
+          padding-bottom: 10px;
+        }
+      }
+    }
+  }
+}
+
+
+nav {
+  position: fixed;
+  right: 0;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  // background-color: #dadbdf;
+  ul {
+    display: flex;
+    flex-flow: row nowrap;
+    list-style-type: none;
+    margin: 0;
+
+    li {
+      padding: 10px;
+      font-size: 1.3em;
+      transition: all 0.2s linear;
+    }
+
+    li:hover {
+      color: rgb(119, 119, 119);
+    }
+  }
+}
+
+
+#root {
+  position: absolute;
+  z-index: -2;
+  width: 100%;
+  height: 101.5vh;
+}
+
+#canvas {
+  width: 100%;
+  height: 100%;
+  object-position: center -1.5vh;
 }
