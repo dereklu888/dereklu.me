@@ -40,6 +40,18 @@ const App = (props) => {
         </div>
       </div>
 
+      <div id="work" className="section">
+        <ul>
+          <li>
+            <h2>Cyber Security Intern @ IPwe</h2>
+            <ul>
+              <li>Thing 1</li>
+              <li>Thing 2</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
     </div>
   );
 };
