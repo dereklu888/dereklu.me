@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import './style.scss';
 import debounce from 'lodash.debounce';
 import Home from './components/home';
+import Portrait from './img/derek.jpg';
+import Bg from './img/bg1min.jpg';
 
 const RaindropFX = require('raindrop-fx');
 
@@ -33,7 +35,7 @@ const App = (props) => {
             </ul>
           </div>
 
-          <img src="src/img/derek.jpg" alt="Derek Lu at Dartmouth" />
+          <img src={Portrait} alt="Derek Lu at Dartmouth" />
 
         </div>
       </div>
@@ -51,7 +53,7 @@ canvas.height = rect.height;
 
 const raindropFx = new RaindropFX({
   canvas,
-  background: 'src/img/bg1min.jpg',
+  background: Bg,
   spawnLimit: 750,
   spawnInterval: [0.3, 0.8],
 });
