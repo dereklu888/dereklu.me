@@ -59,18 +59,19 @@ module.exports = {
           },
         ],
       },
-      // {
-      //   test: /\.(jpe?g|png|gif|svg)$/,
-      //   use: [
-      //     {
-      //       loader: 'file-loader',
-      //       options: {
-      //         useRelativePath: true,
-      //         name: '[name].[ext]',
-      //       },
-      //     },
-      //   ],
-      // },
+      {
+        // jpe?g|png|gif|svg| removed
+        test: /\.(pdf)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              useRelativePath: true,
+              name: '[name].[ext]',
+            },
+          },
+        ],
+      },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
         type: 'asset',

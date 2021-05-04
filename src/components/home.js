@@ -21,9 +21,10 @@ class Home extends Component {
 
   fadeIn = () => {
     // this could all probably be done with vanilla es6 or jQuery, but I'll stick with React here for now
+
+    // used to give the rain graphics time to load, hopefully 2 seconds is enough
     setTimeout(() => {
       this.setState((prevState) => ({
-        ...prevState,
         bgcolor: 'none',
       }));
     }, 2000);
@@ -32,7 +33,6 @@ class Home extends Component {
       setTimeout(() => {
         console.log(`setting state for ${i}`);
         this.setState((prevState) => ({
-          ...prevState,
           hide: prevState.hide.map((curValue, index) => {
             return (index === i ? 'visible' : curValue);
           }),
@@ -42,8 +42,9 @@ class Home extends Component {
   }
 
   render() {
+    console.log(this.state.bgcolor);
     return (
-      <div id="home" className="section" style={{ backgroundColor: this.state.bgcolor }}>
+      <div id="home" className={this.state.bgcolor === 'white' ? 'section white' : 'section none'}>
         <h1>Derek Lu</h1>
         <Icons />
         <p>

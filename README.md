@@ -1,2 +1,2 @@
 # dereklu.me
-Repository for SA1.
+Personal website, built using html, css/sass, JS (React), webpack.
