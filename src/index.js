@@ -18,7 +18,7 @@ const About = (props) => {
           <h2>About me</h2>
           <ul>
             <li>My name&apos;s Derek and I&apos;m a Dartmouth &apos;23, majoring in CS!</li>
-            <li>I&apos;m originally from Austin, Texas, where I learned to love the rain - a cool respite from hot days.</li>
+            <li>I&apos;m originally from Austin, Texas, where I learned to love the rain - a cool respite from bright and hot days.</li>
             <li>Besides programming, I&apos;m interested in cybersecurity.</li>
             <li>I&apos;m also involved with CoderDojo at Dartmouth, where I teach CS to schools around Dartmouth with less access to CS resources.</li>
             <li>As for hobbies, I enjoy playing unconventional video games, D&amp;D, and experiencing the natural world on long walks or hikes.</li>
