@@ -28,7 +28,7 @@ body {
 }
 
 .section, .section-text {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
@@ -142,9 +142,22 @@ img {
 }
 
 #work {
+  font-size: smaller;
 
   .work-wrapper {
-    
+    max-width: 1000px;
+    max-height: 80%;
+    padding-bottom: 80px;
+    &>ul {
+      padding-top: 20px;
+      list-style-type: none;
+    }
+    h2 {
+      padding-top: 20px;
+    }
+    li {
+      padding-top: 10px;
+    }
   }
 }
 
