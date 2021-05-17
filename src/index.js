@@ -36,9 +36,10 @@ const Work = (props) => {
   return (
     <div id="work" className="section">
       <div className="column work-wrapper">
+        <h2>Work Experience</h2>
         <ul>
           <li>
-            <h2>Tech Fellow for Dartmouth&apos;s <a href="https://codepath.org/">Codepath Cybersecurity Course</a></h2>
+            <h3>Tech Fellow for Dartmouth&apos;s <a href="https://codepath.org/">Codepath Cybersecurity Course</a></h3>
             <ul>
               <li>Taught Dartmouth students cybersecurity concepts and practices</li>
               <li>Topics included XSS, SQLi, session hijacking, and more.</li>
@@ -47,7 +48,7 @@ const Work = (props) => {
           </li>
 
           <li>
-            <h2>Cybersecurity Intern @ <a href="https://ipwe.com/">IPwe</a></h2>
+            <h3>Cybersecurity Intern @ <a href="https://ipwe.com/">IPwe</a></h3>
             <ul>
               <li>Researched documentation and wrote up evaluations of security implementations based on what they could offer to the company,
                 which were referenced extensively in the progression of IPwe’s security initiative.
@@ -61,7 +62,7 @@ const Work = (props) => {
           </li>
 
           <li>
-            <h2>Teaching Assistant at Dartmouth for COSC 50 (Software Design and Implementation)</h2>
+            <h3>Teaching Assistant at Dartmouth for COSC 50 (Software Design and Implementation)</h3>
             <ul>
               <li>Worked in tandem with the professor to advance student understanding of bash and C programming in a class of over 60 students.</li>
               <li>Independently graded student lab assignments and hosted three hours of open office hours per week for students of all grades.</li>
@@ -70,7 +71,7 @@ const Work = (props) => {
           </li>
 
           <li>
-            <h2>Research Assistant for the Dartmouth <a href="https://ists.dartmouth.edu/">Institute for Security, Technology and Society (ISTS)</a></h2>
+            <h3>Research Assistant for the Dartmouth <a href="https://ists.dartmouth.edu/">Institute for Security, Technology and Society (ISTS)</a></h3>
             <ul>
               <li>Synthesized research projects
                 and produced write-ups for publication on the <a href="https://cs.dartmouth.edu/dsail/projects.html">Dartmouth Security and Artificial Intelligence Lab (DSAIL) website</a>,
@@ -83,7 +84,7 @@ const Work = (props) => {
           </li>
 
           <li>
-            <h2>Software Development Intern @ <a href="https://www.aiworldwide.com/">American Innovations</a></h2>
+            <h3>Software Development Intern @ <a href="https://www.aiworldwide.com/">American Innovations</a></h3>
             <ul>
               <li>Improved the development cycle of the Pipeline Compliance System (PCS) program by using SQL and Python to update the testing databases, making them more reflective of real data.
               </li>
