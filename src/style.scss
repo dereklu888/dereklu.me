@@ -94,6 +94,10 @@ img {
   background-color: transparent;
 }
 
+.content-wrapper {
+  
+}
+
 #home {
   // background-image: url(img/bg1.jpg);
   // background-position: center;
@@ -143,6 +147,10 @@ img {
 
 #work {
   font-size: smaller;
+  a {
+    color: blue;
+    text-decoration: underline;
+  }
 
   .work-wrapper {
     max-width: 1000px;

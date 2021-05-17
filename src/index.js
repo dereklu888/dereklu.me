@@ -3,13 +3,97 @@ import ReactDOM from 'react-dom';
 import './style.scss';
 import debounce from 'lodash.debounce';
 import Home from './components/home';
-import About from './components/about';
-import Work from './components/work';
 import Bg from './img/bg1min.jpg';
 import BgFull from './img/bg1.jpg';
 import Resume from './docs/DerekLu-resume.pdf';
+import Portrait from './img/derek.jpg';
 
 const RaindropFX = require('raindrop-fx');
+
+const About = (props) => {
+  return (
+    <div id="about" className="section">
+      <div className="row about-wrapper">
+        <div className="column">
+          <h2>About me</h2>
+          <ul>
+            <li>My name&apos;s Derek and I&apos;m a Dartmouth &apos;23, majoring in CS!</li>
+            <li>I&apos;m originally from Austin, Texas, where I learned to love the rain - a cool respite from hot days.</li>
+            <li>Besides programming, I&apos;m interested in cybersecurity.</li>
+            <li>I&apos;m also involved with CoderDojo at Dartmouth, where I teach CS to schools around Dartmouth with less access to CS resources.</li>
+            <li>As for hobbies, I enjoy playing unconventional video games, D&amp;D, and experiencing the natural world on long walks or hikes.</li>
+          </ul>
+        </div>
+
+        <img src={Portrait} alt="Derek Lu at Dartmouth" />
+
+      </div>
+    </div>
+  );
+};
+
+const Work = (props) => {
+  return (
+    <div id="work" className="section">
+      <div className="column work-wrapper">
+        <ul>
+          <li>
+            <h2>Tech Fellow for Dartmouth&apos;s <a href="https://codepath.org/">Codepath Cybersecurity Course</a></h2>
+            <ul>
+              <li>Taught Dartmouth students cybersecurity concepts and practices</li>
+              <li>Topics included XSS, SQLi, session hijacking, and more.</li>
+              <li>Used tools like Burp Suite, Kali Linux, sqlmap, and metasploit.</li>
+            </ul>
+          </li>
+
+          <li>
+            <h2>Cybersecurity Intern @ <a href="https://ipwe.com/">IPwe</a></h2>
+            <ul>
+              <li>Researched documentation and wrote up evaluations of security implementations based on what they could offer to the company,
+                which were referenced extensively in the progression of IPwe’s security initiative.
+              </li>
+              <li>Obtained hands-on experience in infrastructure security implementations and devops
+                through investigating how security checks in software development can be automated in CI/CD pipelines with Docker containers.
+              </li>
+              <li>Reviewed and analyzed the security solutions and packages offered to IPwe by a Blue Chip vendor.</li>
+              <li>Resolved critical exposure of sensitive data on an internal development tool after conducting a review of its configuration.</li>
+            </ul>
+          </li>
+
+          <li>
+            <h2>Teaching Assistant at Dartmouth for COSC 50 (Software Design and Implementation)</h2>
+            <ul>
+              <li>Worked in tandem with the professor to advance student understanding of bash and C programming in a class of over 60 students.</li>
+              <li>Independently graded student lab assignments and hosted three hours of open office hours per week for students of all grades.</li>
+              <li>Communicated class progress and areas for improvement in weekly TA meetings.</li>
+            </ul>
+          </li>
+
+          <li>
+            <h2>Research Assistant for the Dartmouth <a href="https://ists.dartmouth.edu/">Institute for Security, Technology and Society (ISTS)</a></h2>
+            <ul>
+              <li>Synthesized research projects
+                and produced write-ups for publication on the <a href="https://cs.dartmouth.edu/dsail/projects.html">Dartmouth Security and Artificial Intelligence Lab (DSAIL) website</a>,
+                giving other researchers and industry experts a coherent overview of the projects.
+              </li>
+              <li>Projects covered included how a malware’s family can be predicted,
+                sockpuppet social media account detection, predicting a vulnerability’s severity based on Twitter data, and others.
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <h2>Software Development Intern @ <a href="https://www.aiworldwide.com/">American Innovations</a></h2>
+            <ul>
+              <li>Improved the development cycle of the Pipeline Compliance System (PCS) program by using SQL and Python to update the testing databases, making them more reflective of real data.
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  );
+};
 
 class App extends Component {
   constructor(props) {
@@ -92,12 +176,6 @@ if (document.getElementById('canvas').getContext('webgl2')) {
   window.onresize = () => {
     dresize();
   };
-
-  // window.onload = () => {
-  //   setInterval(() => {
-  //     document.getElementById('home').style.background = 'none';
-  //   }, 2000);
-  // };
 
   raindropFx.start();
 } else {
