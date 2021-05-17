@@ -31,7 +31,6 @@ class Home extends Component {
 
     for (let i = 0; i < this.state.hide.length; i += 1) {
       setTimeout(() => {
-        console.log(`setting state for ${i}`);
         this.setState((prevState) => ({
           hide: prevState.hide.map((curValue, index) => {
             return (index === i ? 'visible' : curValue);
@@ -42,7 +41,6 @@ class Home extends Component {
   }
 
   render() {
-    console.log(this.state.bgcolor);
     return (
       <div id="home" className={this.state.bgcolor === 'white' ? 'section white' : 'section none'}>
         <h1>Derek Lu</h1>
