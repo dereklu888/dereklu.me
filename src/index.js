@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import './style.scss';
 import debounce from 'lodash.debounce';
 import Home from './components/home';
-import Portrait from './img/derek.jpg';
+import About from './components/about';
+import Work from './components/work';
 import Bg from './img/bg1min.jpg';
 import BgFull from './img/bg1.jpg';
 import Resume from './docs/DerekLu-resume.pdf';
@@ -55,30 +56,9 @@ class App extends Component {
 
         <Home />
 
-        <div id="about" className="section">
-          <div className="row about-wrapper">
-            <div className="column">
-              <h2>About me</h2>
-              <ul>
-                <li>WIP</li>
-              </ul>
-            </div>
+        <About />
 
-            <img src={Portrait} alt="Derek Lu at Dartmouth" />
-
-          </div>
-        </div>
-
-        <div id="work" className="section">
-          <ul>
-            <li>
-              <h2>WIP</h2>
-              <ul>
-                <li>WIP Item</li>
-              </ul>
-            </li>
-          </ul>
-        </div>
+        <Work />
 
       </div>
     );

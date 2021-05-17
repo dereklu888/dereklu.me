@@ -132,11 +132,19 @@ img {
       align-items: flex-start;
       ul {
         padding-left: 20px;
+        max-width: 450px;
         li {
           padding-bottom: 10px;
         }
       }
     }
+  }
+}
+
+#work {
+
+  .work-wrapper {
+    
   }
 }
 
